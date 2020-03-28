@@ -6,15 +6,27 @@ public class Encomienda
     private String direccion;
     private String rutDestinatario;
     private String nombreDestinatario;
+    private String nombreRemitente;
     private String fechaIngreso;
     private String fechaRecepcion;
     private int estado;
 
-    public Encomienda(int idEntrega, String direccion, String rutDestinatario, String nombreDestinatario, String fechaIngreso, String fechaRecepcion, int estado) {
+    public Encomienda(int idEntrega, String direccion, String rutDestinatario, String nombreDestinatario, String nombreRemitente, String fechaIngreso, String fechaRecepcion, int estado) {
         this.idEntrega = idEntrega;
         this.direccion = direccion;
         this.rutDestinatario = rutDestinatario;
         this.nombreDestinatario = nombreDestinatario;
+        this.nombreRemitente = nombreRemitente;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaRecepcion = fechaRecepcion;
+        this.estado = estado;
+    }
+
+    public Encomienda(String direccion, String rutDestinatario, String nombreDestinatario, String nombreRemitente, String fechaIngreso, String fechaRecepcion, int estado) {
+        this.direccion = direccion;
+        this.rutDestinatario = rutDestinatario;
+        this.nombreDestinatario = nombreDestinatario;
+        this.nombreRemitente = nombreRemitente;
         this.fechaIngreso = fechaIngreso;
         this.fechaRecepcion = fechaRecepcion;
         this.estado = estado;
@@ -36,6 +48,10 @@ public class Encomienda
         return nombreDestinatario;
     }
 
+    public String getNombreRemitente() {
+        return nombreRemitente;
+    }
+
     public String getFechaIngreso() {
         return fechaIngreso;
     }
@@ -46,10 +62,6 @@ public class Encomienda
 
     public int getEstado() {
         return estado;
-    }
-
-    public void setIdEntrega(int idEntrega) {
-        this.idEntrega = idEntrega;
     }
 
     public void setDireccion(String direccion) {
