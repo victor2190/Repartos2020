@@ -3,6 +3,7 @@ package modelo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -57,6 +58,8 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
         /*los valores permitidos para "ESTADO" en la bd son 1, 2 y 3 los cuales son :
         [1=en bodega||2=en reparto||3=entregado]
         configurar este atributo según corresponda más adelante*/
+
+        db.insert("ENCOMIENDAS", null, valores);
     }
 
     //mostrar encomiendas
@@ -88,5 +91,52 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
 
         return encomiendas;
     }
+
+    //obtener detalle de la BD
+    public Encomienda getProducto(String destinatario)//ver parametro...YO QUIERO ID
+    {
+        Encomienda e;
+        SQLiteDatabase db=getReadableDatabase();
+        String sqlTxt="SELECT * FROM ENCOMIENDAS WHERE ID_ENCOMIENDA=?";
+        String[] argumentos= new String[]{destinatario};
+
+        try{
+            Cursor cursor=db.rawQuery(sqlTxt, argumentos);
+            cursor.moveToFirst();
+            //Recordar recuperar y transformar "ESTADO"
+
+            e=new Encomienda(
+                    cursor.getInt(0), //id
+                    cursor.getString(1), //direccion
+                    cursor.getString(2), //rut destinatario
+                    cursor.getString(3), //nomDestinatario
+                    cursor.getString(4), //nomRemitente
+                    cursor.getString(5), //fIngreso
+                    cursor.getString(6), //fRecepcion
+                    cursor.getInt(7) //estado
+            );
+        }
+        catch (SQLException ex)
+        {
+            e=null;
+        }
+
+        return e;
+    }
+
+    //delete
+    public String eliminarEntregados()
+    {
+        String sqlTxt="DELETE FROM ENCOMIENDAS WHERE ESTADO=3";
+        try{
+            getWritableDatabase().execSQL(sqlTxt);
+            return "Se eliminaron las encomiendas entregadas";
+        }
+        catch (SQLException ex)
+        {
+            return "Registros no eliminados";
+        }
+    }
+
 }
 
