@@ -1,4 +1,4 @@
-package modelo;
+package com.example.repartos2020.modelo;
 
 public class Encomienda
 {

@@ -1,4 +1,4 @@
-package modelo;
+package com.example.repartos2020.modelo;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -93,12 +93,12 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
     }
 
     //obtener detalle de la BD
-    public Encomienda getProducto(String destinatario)//ver parametro...YO QUIERO ID
+    public Encomienda getEncomienda(String destinatario)//ver parametro...YO QUIERO ID
     {
         Encomienda e;
         SQLiteDatabase db=getReadableDatabase();
         String sqlTxt="SELECT * FROM ENCOMIENDAS WHERE ID_ENCOMIENDA=?";
-        String[] argumentos= new String[]{destinatario};
+        String[] argumentos= new String[]{destinatario};//cambiar el argumento!!!
 
         try{
             Cursor cursor=db.rawQuery(sqlTxt, argumentos);
@@ -123,6 +123,25 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
 
         return e;
     }
+
+    //update
+    public String actualizar(Encomienda e)
+    {
+        String sqlTxt="UPDATE ENCOMIENDAS SET F_RECEPCION=?, ESTADO=? WHERE ID_ENCOMIENDA=?";
+        Object[] argumentos=new Object[]{e.getFechaRecepcion(), e.getEstado(), e.getIdEntrega()};
+
+        try{
+            getWritableDatabase().execSQL(sqlTxt, argumentos);
+            return "Cambios guardados";
+        }
+        catch (SQLException ex)
+        {
+            return "Imposible guargar cambios";
+        }
+    }
+
+
+
 
     //delete
     public String eliminarEntregados()

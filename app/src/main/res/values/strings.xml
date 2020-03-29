@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">Repartos2020</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Ok</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="welcome">"Vienvenido"</string>
+    <string name="invalid_username">usuario no valido</string>
+    <string name="invalid_password">Contraseña debe ser mayor a 5 caracteres</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_mapa">Mapa</string>
 </resources>
