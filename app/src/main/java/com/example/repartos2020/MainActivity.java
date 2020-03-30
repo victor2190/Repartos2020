@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.repartos2020.modelo.EntregasDatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
+    EntregasDatabaseHelper helper=new EntregasDatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent=new Intent(this, MapaActivity.class);
         startActivity(intent);
+    }
+    public void eliminar(View view)
+    {
+        String msg=helper.eliminarEntregados();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

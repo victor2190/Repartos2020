@@ -40,7 +40,9 @@ public class MapaActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         LatLng oficina=new LatLng(-53.13649, -70.87889);
+        LatLng bodega=new LatLng(-53.132226,-70.882094);
 
+        googleMap.addMarker(new MarkerOptions().position(bodega).title("Bodega"));
         googleMap.addMarker(new MarkerOptions().position(oficina).title("Oficina"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(oficina));
 
