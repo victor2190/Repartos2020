@@ -8,6 +8,70 @@
     android:orientation="vertical"
     tools:context=".NuevaEncomiendaActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="destinatario"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="#039BE5"
+        />
+    <EditText
+        android:id="@+id/etDestDir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Direccion"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/etDestRut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="rut"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/etDestNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nombre"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="remitente"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textColor="#ED0C06"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:id="@+id/etRemNom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nombre"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/etFecIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="fecha"
+        android:inputType="date"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/ingresarForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Ingresar"
+        android:textSize="40dp"
+        android:textColor="#00897B"
+        />
+
+
 
 
 </LinearLayout>
