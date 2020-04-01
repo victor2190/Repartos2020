@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void formularioIngresar(View view)
+    {
+        Intent intent=new Intent(this,NuevaEncomiendaActivity.class);
+        startActivity(intent);
+    }
     public void mapa(View view)
     {
         Intent intent=new Intent(this, MapaActivity.class);
