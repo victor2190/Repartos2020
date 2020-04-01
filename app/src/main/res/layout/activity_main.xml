@@ -33,6 +33,7 @@
         android:layout_height="80dp"
         android:text="Lista encomiendas"
         android:layout_marginTop="10dp"
+        android:onClick="verLista"
         />
     <Button
         android:id="@+id/bEliminar"

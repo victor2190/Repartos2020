@@ -29,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent(this,NuevaEncomiendaActivity.class);
         startActivity(intent);
     }
+    public void verLista(View view)
+    {
+        try{
+            Intent intent=new Intent(this, ListaEncomiendasActivity.class);
+            startActivity(intent);
+        }
+        catch (Exception ex){
+            Toast.makeText(this, "La lista está vacia", Toast.LENGTH_SHORT).show();
+        }
+    }
     public void mapa(View view)
     {
         Intent intent=new Intent(this, MapaActivity.class);

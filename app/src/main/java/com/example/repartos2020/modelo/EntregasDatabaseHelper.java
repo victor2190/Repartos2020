@@ -146,7 +146,7 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
     //delete
     public String eliminarEntregados()
     {
-        String sqlTxt="DELETE FROM ENCOMIENDAS WHERE ESTADO=3";
+        String sqlTxt="DELETE FROM ENCOMIENDAS WHERE ESTADO=1";
         try{
             getWritableDatabase().execSQL(sqlTxt);
             return "Se eliminaron las encomiendas entregadas";
