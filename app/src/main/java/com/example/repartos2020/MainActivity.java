@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.repartos2020.modelo.Encomienda;
 import com.example.repartos2020.modelo.EntregasDatabaseHelper;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     EntregasDatabaseHelper helper=new EntregasDatabaseHelper(this);
@@ -32,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     public void verLista(View view)
     {
         try{
+            ArrayList<Encomienda> encomiendas=(ArrayList<Encomienda>)helper.listaEncomiendas();
+            //sin la linea superior se cae si la lista está vacía...D=
+
             Intent intent=new Intent(this, ListaEncomiendasActivity.class);
             startActivity(intent);
         }
         catch (Exception ex){
-            Toast.makeText(this, "La lista está vacia", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
         }
     }
     public void mapa(View view)
