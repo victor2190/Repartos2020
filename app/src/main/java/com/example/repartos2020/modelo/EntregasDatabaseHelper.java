@@ -93,12 +93,12 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
     }
 
     //obtener detalle de la BD
-    public Encomienda getEncomienda(String destinatario)//ver parametro...YO QUIERO ID
+    public Encomienda getEncomienda(String direccion)//ver parametro...YO QUIERO ID
     {
         Encomienda e;
         SQLiteDatabase db=getReadableDatabase();
-        String sqlTxt="SELECT * FROM ENCOMIENDAS WHERE ID_ENCOMIENDA=?";
-        String[] argumentos= new String[]{destinatario};//cambiar el argumento!!!
+        String sqlTxt="SELECT * FROM ENCOMIENDAS WHERE DIRECCION=?";
+        String[] argumentos= new String[]{direccion};//cambiar el argumento!!!
 
         try{
             Cursor cursor=db.rawQuery(sqlTxt, argumentos);
