@@ -40,8 +40,8 @@ public class ListaEncomiendasActivity extends ListActivity {
         String[] separar=linea.split(":");
 
         Intent intent=new Intent(ListaEncomiendasActivity.this, DetallesActivity.class);
-        //intent.putExtra("nomDes", separar[0]);
-        intent.putExtra("1", "item1");
+        intent.putExtra("nomDes", separar[0]);
+        //intent.putExtra("1", "item1");
         startActivityForResult(intent, 1);
     }
     @Override
