@@ -30,7 +30,7 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
                 "ID_ENCOMIENDA INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "DIRECCION TEXT, " +
                 "RUT_DESTINATARIO TEXT, " +
-                "NOM_DESTINATARIO," +
+                "NOM_DESTINATARIO TEXT," +
                 "NOM_REMITENTE TEXT, " +
                 "F_INGRESO TEXT, " +
                 "F_RECEPCION TEXT, " +
@@ -56,7 +56,7 @@ public class EntregasDatabaseHelper extends SQLiteOpenHelper
         valores.put("F_RECEPCION", encomienda.getFechaRecepcion());
         valores.put("ESTADO", encomienda.getEstado());
         /*los valores permitidos para "ESTADO" en la bd son 1, 2 y 3 los cuales son :
-        [1=en bodega||2=en reparto||3=entregado]
+        [ 1=en bodega || 2=en reparto || 3=entregado ]
         configurar este atributo según corresponda más adelante*/
 
         db.insert("ENCOMIENDAS", null, valores);
